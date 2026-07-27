@@ -1,4 +1,4 @@
-import React, { useEffect} from "react"
+import React, { useState, useEffect} from "react"
 import {WiDaySunny, WiCloud, WiRain, WiShowers, WiSnow
     , WiThunderstorm, WiFog, WiDayHaze} from "react-icons/wi"
 import {Droplets, Wind, Gauge, Sunrise, Sunset} from "lucide-react"
@@ -56,6 +56,17 @@ const weatherBackgrounds = {
 };
 
 function CurrentWeather({current}){
+  const[isCelcius, setIsCelcius] = useState(true);
+  const[currTemperature, setCurrTemperature] = useState("");
+
+  useEffect(() => {
+    if(isCelcius){
+      setCurrTemperature((current.main.temp) + "°C")
+    }else{
+      const newTemp = (((current.main.temp * 1.8) + 32).toFixed(2)) + "°F";
+      setCurrTemperature(newTemp);
+    }
+  }, [isCelcius])
 
   useEffect(() => {
     if(current){
@@ -75,9 +86,21 @@ function CurrentWeather({current}){
           style={{color: `${weatherStyles[current.weather[0].main].color}`}}
       >{weatherStyles[current.weather[0].main].icon}</div>  
 
-      <h1 className="current-city-temperature">{current.main.temp}°C</h1>
+      <h1 className="current-city-temperature">{currTemperature}</h1>
 
       <p className="current-city-description">{description}</p>
+
+      <div className="current-temperature-buttons-wrapper">
+        <button 
+          className={`current-temperature-button ${isCelcius? "active" : ""}`}
+          onClick={() => setIsCelcius(true)}
+        >°C</button>
+
+        <button className={`current-temperature-button ${!isCelcius? "active" : ""}`}
+          onClick={() => setIsCelcius(false)}
+        >°F</button>
+
+      </div>
 
       <div className="current-cards">
         <div className="current-card">

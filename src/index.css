@@ -77,6 +77,23 @@
 
     --temp-color: #FBBF24;
 
+    --temp-toggle-bg: rgba(255, 255, 255, 0.08);
+    --temp-toggle-hover: rgba(255, 255, 255, 0.14);
+    --temp-toggle-active: linear-gradient(
+        135deg,
+        #60A5FA 0%,
+        #3B82F6 100%
+    );
+
+    --temp-toggle-text: var(--text-secondary);
+    --temp-toggle-active-text: #FFFFFF;
+
+    --temp-toggle-border: rgba(255, 255, 255, 0.12);
+    --temp-toggle-hover-border: rgba(96, 165, 250, 0.45);
+    --temp-toggle-active-border: #60A5FA;
+
+    --temp-toggle-shadow: 0 8px 16px rgba(59, 130, 246, 0.25);
+
     --success: #22C55E;
     --warning: #F59E0B;
     --danger: #EF4444;
@@ -253,7 +270,37 @@ body{
 .current-city-description{
     font-size: 1.2rem;
     color: var(--text-secondary);
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
+}
+.current-temperature-buttons-wrapper{
+    display: flex;
+    gap :1rem;
+    margin-bottom: 1rem ;
+}
+.current-temperature-button{
+    padding: .7rem 1rem;
+    background-color: var(--temp-toggle-bg);
+    border: 1px solid var(--temp-toggle-border);
+    border-radius: var(--radius-sm);
+    color: var(--temp-toggle-text);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.current-temperature-button:hover{
+    background-color: var(--temp-toggle-hover);
+    border: 1px solid var(--temp-toggle-hover-border);
+    transform: translateY(-2px);
+}
+.current-temperature-button:active{
+    transform: scale(0.95);
+    background-color: var(--card-bg);
+}
+.current-temperature-button.active{
+    background: var(--temp-toggle-active);
+    color: var(--temp-toggle-active-text);
+    border: 1px solid var(--temp-toggle-active-border);
+    box-shadow: var(--temp-toggle-shadow);
 }
 .current-cards{
     display: grid;
