@@ -111,9 +111,8 @@
     --transition-fast: .2s ease;
     --transition: all .3s ease;
     --transition-slow: .45s ease;
-        
-    --scroll-thumb: #60A5FA;
-    --scroll-track: transparent;
+    --scroll-thumb: rgba(255, 255, 255, 0.28);
+    --scroll-thumb-hover: rgba(255,255,255,.45);
 
     --recent-search-bg: rgba(255, 255, 255, 0.08);
     --recent-search-hover: rgba(255, 255, 255, 0.14);
@@ -425,6 +424,16 @@ body{
 }
 .forecast-card-description{
     color: var(--text-muted)
+}
+::-webkit-scrollbar{
+    width: 6px;
+}
+::-webkit-scrollbar-thumb{
+    background: var(--scroll-thumb);
+    border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: var(--scroll-thumb-hover);
 }
 
 @media (max-width: 1200px){

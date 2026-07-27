@@ -1,6 +1,6 @@
 # 🌤️ SkyCast
 
-A modern and responsive weather application built with **React.js** that provides real-time weather information and a 5-day forecast for any city worldwide. SkyCast features a clean user interface, smooth user experience, and dynamic weather data powered by the OpenWeather API.
+A modern and responsive weather application built with **React.js** that provides real-time weather information, a 5-day forecast, recent search history, and temperature unit conversion (°C/°F) for cities worldwide. SkyCast features a clean glassmorphism-inspired interface and delivers live weather data using the OpenWeather API.
 
 ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)
 ![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite)
@@ -33,11 +33,15 @@ A modern and responsive weather application built with **React.js** that provide
 - 🌡️ View real-time weather conditions
 - 📅 5-day weather forecast
 - 🌤️ Weather icons based on current conditions
+- 🌈 Dynamic backgrounds that change based on current weather conditions
+- 🌡️ Toggle between Celsius (°C) and Fahrenheit (°F)
+- 🕘 Recent search history with one-click search
+- 💾 Recent searches are saved using Local Storage
 - ⚡ Fast and responsive user interface
 - 📱 Fully responsive design for desktop, tablet, and mobile
 - ⏳ Loading spinner while fetching weather data
 - ❌ User-friendly error handling for invalid cities or network issues
-- 🎨 Modern UI with reusable React components
+- 🎨 Modern UI built with reusable React components
 
 ---
 
@@ -127,12 +131,11 @@ The application can be deployed on platforms such as:
 ## 💡 Future Improvements
 
 - 📍 Detect user's current location
-- 🌅 Dynamic backgrounds based on weather conditions
 - 🌙 Dark/Light mode
 - 🕒 Hourly weather forecast
 - ⭐ Save favorite cities
-- 🌎 Recent search history
-- 🌡️ Toggle between Celsius and Fahrenheit
+- 🌬️ Additional weather metrics (Air Quality Index, UV Index, Visibility)
+- 🌐 Search suggestions with autocomplete
 
 ---
 
