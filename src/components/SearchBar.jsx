@@ -25,8 +25,9 @@ function SearchBar({changeWeather}){
         searchCity(city);
     }
 
-    async function searchCity(cityName){
-        if(!cityName.trim()) return;
+    async function searchCity(cityInput){
+        if(!cityInput.trim()) return;
+        const cityName = cityInput.trim();
 
         setLoading(true);
         setError(null);
